@@ -14,4 +14,4 @@ services:
       - /var/lib/mysql
     environment:
        MYSQL_ROOT_PASSWORD: Qwert78940*
-       MYSQL_DATABASE: mmicroservice
+       MYSQL_DATABASE: microservice

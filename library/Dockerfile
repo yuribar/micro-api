@@ -1,8 +1,8 @@
-FROM python:2-alpine
+FROM python:2
 
 MAINTAINER Yuri Barbosa <yuribarbosa123@hotmail.com>
 
-ADD api.py requirements.txt /
+ADD app.py requirements.txt /
 RUN pip install -r ./requirements.txt
 
 ENV PORT=5000
@@ -10,4 +10,4 @@ ENV PORT=5000
 EXPOSE $PORT
 HEALTHCHECK CMD curl --fail http://localhost:$PORT || exit 1
 
-CMD [ "./api.py" ]
+CMD [ "./app.py" ]
