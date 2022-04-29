@@ -17,6 +17,10 @@ class Usuario(db.Model):
     def to_json(self):
         return {"id": self.id, "nome": self.nome, "email": self.email}
 
+@app.route("/")
+def hello():
+    return "Bem - vindo a API !\n"
+
 # Selecionar Tudo
 @app.route("/usuarios", methods=["GET"])
 def seleciona_usuarios():
