@@ -1,4 +1,4 @@
-b"python byte to string".decode("utf-8")
+# coding: utf-8
 
 from flask import Flask, Response, request
 from flask_sqlalchemy import SQLAlchemy
