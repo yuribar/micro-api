@@ -1,4 +1,4 @@
-FROM python:2
+FROM python:3
 
 LABEL Yuri Barbosa <yuribarbosa123@hotmail.com>
 
