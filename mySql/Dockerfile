@@ -1,6 +1,6 @@
 FROM mysql
 
-MAINTAINER Yuri Barbosa < yuribarbosa123@hotmail.com >
+LABEL Yuri Barbosa < yuribarbosa123@hotmail.com >
 
 #ENV MYSQL_USER=root \
 #    MYSQL_DATABASE=microservice \
