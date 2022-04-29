@@ -1,6 +1,6 @@
 FROM python:2
 
-MAINTAINER Yuri Barbosa <yuribarbosa123@hotmail.com>
+LABEL Yuri Barbosa <yuribarbosa123@hotmail.com>
 
 ADD app.py requirements.txt /
 RUN pip install -r ./requirements.txt
