@@ -1,9 +1,4 @@
-# -*- coding: utf-8 -*-
-
-u = 'idzie wąż wąską dróżką'
-uu = u.decode('utf8')
-s = uu.encode('cp1250')
-print(s)
+# coding= utf-8
 
 from flask import Flask, Response, request
 from flask_sqlalchemy import SQLAlchemy
