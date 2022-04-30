@@ -4,14 +4,4 @@ services:
     build: library/.
     ports:
       - "4000:5000"
-    depends_on:
-      - mysql
-  mysql:
-    build: mySql/.
-    ports:
-      - "3306:3306"
-    volumes:
-      - /var/lib/mysql
-    environment:
-       MYSQL_ROOT_PASSWORD: Qwert78940*
-       MYSQL_DATABASE: microservice
+    
