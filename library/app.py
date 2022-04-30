@@ -25,5 +25,6 @@ app = Flask(__name__)
 def hello():
     return "Bem - vindo a API !\n"
 
-app.run()
+if __name__ == "__main__":
+    app.run(host='0.0.0.0',debug=True)
     
