@@ -1,4 +1,4 @@
-# coding= utf-8
+#!/usr/bin/env python
 
 from flask import Flask, Response, request
 from flask_sqlalchemy import SQLAlchemy
