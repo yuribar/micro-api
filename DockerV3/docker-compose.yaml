@@ -3,7 +3,7 @@ version: '3'
 services:
 
   api:
-    image: microservice/api
+    image: mayaraanjos/api
     ports:
       - "3000:5000"
     depends_on:
@@ -18,7 +18,7 @@ services:
         condition: on-failure
 
   mysql:
-    image: microservice/mysql
+    image: mayaraanjos/mysql
     ports:
       - "3306:3306"
     environment:
