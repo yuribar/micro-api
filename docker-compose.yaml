@@ -7,7 +7,7 @@ services:
     depends_on:
       - mysql
   mysql:
-    build: mySql/.
+    build: mysql/.
     ports:
       - "3306:3306"
     volumes:
