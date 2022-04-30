@@ -35,7 +35,7 @@ def seleciona_usuarios():
     usuarios_json = [usuario.to_json() for usuario in usuarios_objetos]
     #print(type(usuarios_json))
 
-    return jsonify(usuarios_json)
+    return jsonify(200, "usuarios",usuarios_json)
 
    # return  gera_response(200, "usuarios", usuarios_json)
 
