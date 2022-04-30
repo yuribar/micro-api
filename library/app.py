@@ -1,5 +1,6 @@
 #!/usr/bin/env python
 
+from tokenize import String
 from flask import Flask, Response, request
 from flask_sqlalchemy import SQLAlchemy
 import mysql.connector
@@ -10,7 +11,7 @@ app = Flask(__name__)
 app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = True
 app.config['SQLALCHEMY_DATABASE_URI'] = 'mysql://root:Qwert78940*@mysql/microservice'
 
-
+#def gera_response (resp: str, user: str, json: str)
 
 db = SQLAlchemy(app)
 
@@ -31,8 +32,11 @@ def hello():
 def seleciona_usuarios():
     usuarios_objetos = Usuario.query.all()
     usuarios_json = [usuario.to_json() for usuario in usuarios_objetos]
+    print(type(usuarios_json))
 
-    return  usuarios_json
+    return type(usuarios_json)
+
+   # return  gera_response(200, "usuarios", usuarios_json)
 
 if __name__ == "__main__":
     app.run(host='0.0.0.0',debug=True)
