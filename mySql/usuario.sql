@@ -1,4 +1,5 @@
 create database if not exists microservice;
 use microservice;
 create table if not exists usuario (id INTEGER PRIMARY KEY, nome VARCHAR(50) NOT NULL, email VARCHAR(100));
-insert into usuario values (1234, "Yuri Barbosa", "yuribarbosa@hotmail.com") and (5678, "Mayara Anjos", "mayaraanjos@hotmail.com");
+
+INSERT INTO usuario (id, nome, email ) VALUES (1234, "Yuri", "yuribarbosa@hotmail.com", 5678, "Mayara", "mayara.suzanaa@gmail.com");
