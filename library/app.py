@@ -3,6 +3,7 @@
 from tokenize import String
 from flask import Flask, Response, request
 from flask_sqlalchemy import SQLAlchemy
+from flask import jsonify
 import mysql.connector
 import json
 
@@ -32,9 +33,9 @@ def hello():
 def seleciona_usuarios():
     usuarios_objetos = Usuario.query.all()
     usuarios_json = [usuario.to_json() for usuario in usuarios_objetos]
-    print(type(usuarios_json))
+    #print(type(usuarios_json))
 
-    return type(usuarios_json)
+    return jsonify(usuarios_json)
 
    # return  gera_response(200, "usuarios", usuarios_json)
 
