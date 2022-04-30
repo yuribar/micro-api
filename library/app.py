@@ -7,12 +7,9 @@ from flask import jsonify
 import mysql.connector
 import json
 
-
 app = Flask(__name__)
 app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = True
 app.config['SQLALCHEMY_DATABASE_URI'] = 'mysql://root:Qwert78940*@mysql/microservice'
-
-#def gera_response (resp: str, user: str, json: str)
 
 db = SQLAlchemy(app)
 
@@ -33,12 +30,18 @@ def hello():
 def seleciona_usuarios():
     usuarios_objetos = Usuario.query.all()
     usuarios_json = [usuario.to_json() for usuario in usuarios_objetos]
-    #print(type(usuarios_json))
 
-    return jsonify(200, "usuarios",usuarios_json)
+    return jsonify(200, "usuarios", usuarios_json)
 
-   # return  gera_response(200, "usuarios", usuarios_json)
+# Selecionar Individual
+@app.route("/usuario/<id>", methods=["GET"])
+def seleciona_usuario(id):
+    usuario_objeto = Usuario.query.filter_by(id=id).first()
+    usuario_json = usuario_objeto.to_json()
 
+    return jsonify(200, "usuario", usuario_json)
+
+   
 if __name__ == "__main__":
     app.run(host='0.0.0.0',debug=True)
     
