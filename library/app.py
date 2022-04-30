@@ -9,7 +9,7 @@ import json
 
 app = Flask(__name__)
 app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = True
-app.config['SQLALCHEMY_DATABASE_URI'] = 'mysql://root:Qwert78940*@localhost/microservice'
+app.config['SQLALCHEMY_DATABASE_URI'] = 'mysql://root:Qwert78940*@mysql/microservice'
 
 db = SQLAlchemy(app)
 
