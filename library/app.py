@@ -25,6 +25,14 @@ class Usuario(db.Model):
 def hello():
     return "Bem - vindo a API !\n"
 
+    # Selecionar Tudo
+@app.route("/usuarios", methods=["GET"])
+def seleciona_usuarios():
+    usuarios_objetos = Usuario.query.all()
+    usuarios_json = [usuario.to_json() for usuario in usuarios_objetos]
+
+    return gera_response(200, "usuarios", usuarios_json)
+
 if __name__ == "__main__":
     app.run(host='0.0.0.0',debug=True)
     
