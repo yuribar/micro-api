@@ -3,7 +3,7 @@ version: '3'
 services:
 
   api:
-    image: mayaraanjos/apiV1
+    image: mayaraanjos/apiv1
     ports:
       - "4000:5000"
     depends_on:
@@ -18,7 +18,7 @@ services:
         condition: on-failure
 
   mysql:
-    image: mayaraanjos/mysqlV1
+    image: mayaraanjos/mysqlv1
     ports:
       - "3306:3306"
     environment:
