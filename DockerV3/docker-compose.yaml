@@ -21,6 +21,8 @@ services:
     image: mayaraanjos/mysqlv1
     ports:
       - "3306:3306"
+    volumes:
+      - /var/lib/mysql
     environment:
       MYSQL_USER: root
       MYSQL_DATABASE: microservice
