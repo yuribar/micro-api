@@ -1,24 +1,8 @@
 version: '3'
-
 services:
 
-  api:
-    image: mayaraanjos/apiv1
-    ports:
-      - "4000:5000"
-    depends_on:
-      - mysql
-    deploy:
-      replicas: 3
-      #update_config:
-      #  parallelism: 1
-      #  delay: 10is
-      mode: replicated
-      restart_policy:
-        condition: on-failure
-
   mysql:
-    image: mayaraanjos/mysqlv1
+    image: mayaraanjos/mysqlv2
     ports:
       - "3306:3306"
     volumes:
@@ -38,3 +22,19 @@ services:
 
 volumes:
   db-data:
+
+  api:
+    image: mayaraanjos/apiv2
+    ports:
+      - "4000:5000"
+    depends_on:
+      - mysql
+    deploy:
+      replicas: 3
+      #update_config:
+      #  parallelism: 1
+      #  delay: 10is
+      mode: replicated
+      restart_policy:
+        condition: on-failure
+
