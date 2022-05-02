@@ -1,17 +1,40 @@
-version: '2'
+version: '3'
+
 services:
+
   api:
-    build: library/.
+    image: mayaraanjos/apiv1
     ports:
       - "4000:5000"
     depends_on:
       - mysql
+    deploy:
+      replicas: 3
+      #update_config:
+      #  parallelism: 1
+      #  delay: 10is
+      mode: replicated
+      restart_policy:
+        condition: on-failure
+
   mysql:
-    build: mysql/.
+    image: mayaraanjos/mysqlv1
     ports:
       - "3306:3306"
     volumes:
-      - /var/lib/mysql
+      - db-data:/var/lib/mysql
     environment:
-       MYSQL_ROOT_PASSWORD: Qwert78940*
-       MYSQL_DATABASE: microservice
+      MYSQL_USER: root
+      MYSQL_DATABASE: microservice
+      MYSQL_ROOT_PASSWORD: Qwert78940*
+    deploy:
+      replicas: 1
+      # resources:
+      #   limits:
+      #     cpus: "0.1"
+      #     memory: 50M
+      restart_policy:
+        condition: on-failure
+
+volumes:
+  db-data:
