@@ -20,9 +20,6 @@ services:
       restart_policy:
         condition: on-failure
 
-volumes:
-  db-data:
-
   api:
     image: mayaraanjos/apiv2
     ports:
@@ -37,4 +34,7 @@ volumes:
       mode: replicated
       restart_policy:
         condition: on-failure
+
+volumes:
+  db-data:
 
