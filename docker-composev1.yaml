@@ -2,7 +2,7 @@ version: '3.1'
 services:
 
   mysql:
-    image: mayaraanjos/mysqlv2
+    image: mayaraanjos/mysqlv3
     ports:
       - "3306:3306"
     volumes:
@@ -21,7 +21,7 @@ services:
         condition: on-failure
 
   api:
-    image: mayaraanjos/apiv2
+    image: mayaraanjos/apiv3
     ports:
       - "4000:5000"
     depends_on:
