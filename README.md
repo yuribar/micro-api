@@ -1,6 +1,6 @@
 # micro-api
 
-Rodar o comando do swarm
+Rodar o comando do swarm \n
 docker stack deploy -c docker-composev1.yaml stackMicroFinal
 
 para acessar a API use
